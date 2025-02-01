@@ -1,0 +1,241 @@
+.confirmation-container {
+  max-width: 800px;
+  margin: 80px auto 0;
+  padding: 2rem;
+}
+
+.confirmation-box {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #4caf50;
+  margin-bottom: 1.5rem;
+  animation: scaleIn 0.5s ease-out 0.3s both;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.confirmation-box h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.5s ease-out 0.5s both;
+}
+
+.order-id {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.5s ease-out 0.6s both;
+}
+
+.confirmation-message {
+  color: #555;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  animation: fadeIn 0.5s ease-out 0.7s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.order-status {
+  margin: 3rem 0;
+  animation: fadeIn 0.5s ease-out 0.8s both;
+}
+
+.order-status h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.status-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.status-timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: #eee;
+  z-index: 1;
+}
+
+.status-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.status-item .material-icons {
+  background: white;
+  color: #ccc;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.status-item.active .material-icons {
+  color: #ff4757;
+  border-color: #ff4757;
+  box-shadow: 0 0 0 5px rgba(255, 71, 87, 0.1);
+}
+
+.status-item p {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.status-item.active p {
+  color: #ff4757;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  animation: fadeIn 0.5s ease-out 1s both;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn .material-icons {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background: #ff4757;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 71, 87, 0.3);
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #333;
+  border: 2px solid #eee;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .confirmation-container {
+    padding: 1rem;
+  }
+
+  .status-timeline {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    padding-left: 3rem;
+  }
+
+  .status-timeline::before {
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+  }
+
+  .status-item {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Progress Animation */
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress-bar {
+  height: 2px;
+  background: #ff4757;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  right: 50px;
+  z-index: 1;
+  transform-origin: left;
+  animation: progress 2s ease-out forwards;
+}
